@@ -41,27 +41,55 @@ sudo apt-get update
 sudo apt-get --assume-yes install google-chrome-stable
 echo "Done."
 echo ""
+echo "Installing antivirus software..."
+sudo apt-get --assume-yes install clamav clamtk chkrootkit rkhunter  
+echo "Done."
+echo ""
+echo "Installing Filezilla..."
+sudo apt-get --assume-yes install filezilla
+echo "Done."
+echo ""
+echo "Installing Gimp..."
+sudo apt-get --assume-yes install gimp
+echo "Done."
+echo ""
+echo "Installing Gparted..."
+sudo apt-get --assume-yes install gparted
+echo "Done."
+echo ""
+echo "Installing 7zip..."
+sudo apt-get --assume-yes install p7zip-full
+echo "Done."
+echo ""
+echo "Installing Putty..."
+sudo apt-get --assume-yes install putty
+echo "Done."
+echo ""
+echo "Installing Remmina..."
+sudo apt-get --assume-yes install remmina
+echo "Done."
+echo ""
+echo "Installing VLC (Video Lan Client)..."
+sudo apt-get --assume-yes install vlc
+echo "Done."
+echo ""
+echo "Installing Notepad qq (a wonderful Notepad++ clone)..."
+echo | sudo add-apt-repository ppa:notepadqq-team/notepadqq
+sudo apt-get update
+sudo apt-get --assume-yes install notepadqq
+echo "Done."
+echo ""
+echo "ALL DONE."
+echo ""
 
 
 # xUbuntuRMX 16.04.3 Software
 #
 # Base xubuntu 16.04.3
 #
-# * chkrootkit
-# * clamav
-# * clamtk
 # * conky
 # * docky
-# * filezilla
-# * gimp
-# * gparted
-# * p7zip-full
-# * putty
-# * remmina
-# * rkhunter
 # * samba
-# * vlc
-# * Notepadqq (via PPA)(**)
 # * Angry IP Scanner (via deb package)
 # * FreeFileSync 8.6 (via deb package)
 # * KeePassX 0.4.3 (via deb package, hold updates)(°)
@@ -74,11 +102,6 @@ echo ""
 # * DA AGGIUNGERE: Software tipo Speccy
 #
 # Note:
-# 
-# (**)
-# sudo add-apt-repository ppa:notepadqq-team/notepadqq
-# sudo apt-get update
-# sudo apt-get install notepadqq
 # 
 # (°)
 # echo "keepassx hold" | sudo dpkg --set-selections
