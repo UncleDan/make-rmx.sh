@@ -13,7 +13,7 @@ echo ""
 echo "Installing LAMP and PhpMyAdmin..."
 sudo apt-get --assume-yes install apache2 mysql-server mysql-client php7.0 libapache2-mod-php7.0 phpmyadmin
 # BEGIN --- Useless, Jekyll will remove this. Kept as an example.
-# [ -f /var/www/html/index.html ] && sudo mv /var/www/html/index.html /var/www/html/index-bak.html
+# [ -f /var/www/html/index.html ] && sudo mv /var/www/html/index.html /var/www/html/index.html.bak
 # sudo sh -c 'cat > /var/www/html/phpinfo.php <<EOF
 # <?php phpinfo(); ?>
 # EOF'
@@ -73,14 +73,33 @@ echo "Installing VLC (Video Lan Client)..."
 sudo apt-get --assume-yes install vlc
 echo "Done."
 echo ""
-echo "Installing Notepad qq (a wonderful Notepad++ clone)..."
+echo "Installing Notepadqq from PPA (a wonderful Notepad++ clone)..."
 echo | sudo add-apt-repository ppa:notepadqq-team/notepadqq
 sudo apt-get update
 sudo apt-get --assume-yes install notepadqq
 echo "Done."
 echo ""
+
+echo "Installing Angry IP Scanner from deb package..."
+sudo apt-get install openjdk-8-jre
+sudo apt-get install -f
+wget https://github.com/angryip/ipscan/releases/download/3.5.1/ipscan_3.5.1_amd64.deb 
+sudo dpkg -i ipscan_3.5.1_amd64.deb
+rm ipscan_3.5.1_amd64.deb
+sudo apt-get install -f
+echo "Done."
+echo ""
+
+echo "Installing FreeFileSync from deb package..."
+wget http://archive.getdeb.net/ubuntu/pool/apps/f/freefilesync/freefilesync_8.6-1~getdeb1_amd64.deb
+sudo dpkg -i freefilesync_8.6-1~getdeb1_amd64.deb
+rm freefilesync_8.6-1~getdeb1_amd64.deb
+sudo apt-get install -f
+echo "Done."
+echo ""
 echo "ALL DONE."
 echo ""
+
 
 
 # xUbuntuRMX 16.04.3 Software
@@ -90,8 +109,6 @@ echo ""
 # * conky
 # * docky
 # * samba
-# * Angry IP Scanner (via deb package)
-# * FreeFileSync 8.6 (via deb package)
 # * KeePassX 0.4.3 (via deb package, hold updates)(°)
 # * pCloud (via deb package)
 # * Pinguy Builder 4.3-8_all_beta (via deb package)
