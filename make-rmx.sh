@@ -97,10 +97,19 @@ rm freefilesync_8.6-1~getdeb1_amd64.deb
 sudo apt-get install -f
 echo "Done."
 echo ""
-echo "ALL DONE."
+
+echo "Installing KeePassXFreeFileSync 0.4.3 from deb package (I need to work with KDB v1.x)..."
+wget http://security.ubuntu.com/ubuntu/pool/universe/k/keepassx/keepassx_0.4.3+dfsg-0.1ubuntu1.14.04.1_amd64.deb
+sudo dpkg -i keepassx_0.4.3+dfsg-0.1ubuntu1.14.04.1_amd64.deb
+rm keepassx_0.4.3+dfsg-0.1ubuntu1.14.04.1_amd64.deb
+echo "S" | sudo apt-get install -f
+echo "Locking updates (newer versions do not support KDB v1.x)..."
+echo "keepassx hold" | sudo dpkg --set-selections
+echo "Done."
 echo ""
 
-
+echo "ALL DONE."
+echo ""
 
 # xUbuntuRMX 16.04.3 Software
 #
@@ -109,7 +118,6 @@ echo ""
 # * conky
 # * docky
 # * samba
-# * KeePassX 0.4.3 (via deb package, hold updates)(°)
 # * pCloud (via deb package)
 # * Pinguy Builder 4.3-8_all_beta (via deb package)
 # * Teamviewer 11 (via deb package)
@@ -117,9 +125,4 @@ echo ""
 # * Webmin 1.850 (via deb package)
 # * DA AGGIUNGERE: Android SDK
 # * DA AGGIUNGERE: Software tipo Speccy
-#
-# Note:
-# 
-# (°)
-# echo "keepassx hold" | sudo dpkg --set-selections
-# 
+
