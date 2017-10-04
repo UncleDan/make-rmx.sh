@@ -176,6 +176,15 @@ echo "S" | sudo apt-get -f install
 echo "Done."
 echo
 
+echo "Installing Invoicex 1.8.9 from jar package..."
+sudo apt-get install openjdk-8-jre
+sudo apt-get -f install
+wget http://server.invoicex.it/download/setup/Invoicex_Setup_1.8.9_20161025_linux.jar 
+java -jar Invoicex_Setup_1.8.9_20161025_linux.jar
+rm Invoicex_Setup_1.8.9_20161025_linux.jar
+echo "Done."
+echo
+
 echo "ALL DONE."
 echo ""
 
