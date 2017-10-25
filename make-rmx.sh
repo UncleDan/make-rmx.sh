@@ -252,7 +252,7 @@ esac
 echo
 echo 
 echo "\033[1;33m\033[1mVIRTUALBOX:\033[0m"
-echo "Virtualbox 5.1.28 from deb package"
+echo "Virtualbox 5.2.0 from deb package"
 echo 
 read -r -p "Install? [Y/N] " response
 echo
@@ -261,10 +261,12 @@ case "$response" in
 		echo "INSTALLING  V I R T U A L B O X  PACKAGES..."
 		echo
 		
-		echo "Installing Virtualbox 5.1.28 from deb package..."
-		wget http://download.virtualbox.org/virtualbox/5.1.28/virtualbox-5.1_5.1.28-117968~Ubuntu~xenial_amd64.deb
-		sudo dpkg -i virtualbox-5.1_5.1.28-117968~Ubuntu~xenial_amd64.deb
-		rm virtualbox-5.1_5.1.28-117968~Ubuntu~xenial_amd64.deb
+		echo "Cleaning previous version..."
+		apt-get --assume-yes remove virtualbox-5.1 
+		echo "Installing Virtualbox 5.2.0 from deb package..."
+		wget http://download.virtualbox.org/virtualbox/5.2.0/virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb
+		sudo dpkg -i virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb
+		rm virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb
 		echo "S" | sudo apt-get -f install
 		echo "Done."
 		echo
@@ -305,7 +307,22 @@ echo
 echo "\033[1mALL DONE.\033[0m"
 echo ""
 
+### xUbuntuRMX 16.04.3 Software
+###
+### Base xubuntu 16.04.3
+###
+### * conky
+### * docky
+### * samba
+### * DA AGGIUNGERE: Virtualbox Extension Pack (command line?)
+### * DA AGGIUNGERE: Android SDK
+### * DA AGGIUNGERE: Software tipo Speccy
 
+
+
+
+
+### C O L O R S: ###
 
 ### You can use these ANSI escape codes:
 ### 
@@ -332,8 +349,6 @@ echo ""
 ### echo -e "I ${RED}love${NC} Stack Overflow"
 ### (don't add "\n" when using echo unless you want to add additional empty line)
 
-
-
 ### In theory like so:
 ### 
 ### # BOLD
@@ -352,14 +367,3 @@ echo ""
 ### But in practice it may be interpreted as "high intensity" color instead.
 ### 
 ### (source: http://unstableme.blogspot.com/2008/01/ansi-escape-sequences-for-writing-text.html)
-
-### xUbuntuRMX 16.04.3 Software
-###
-### Base xubuntu 16.04.3
-###
-### * conky
-### * docky
-### * samba
-### * DA AGGIUNGERE: Virtualbox Extension Pack (command line?)
-### * DA AGGIUNGERE: Android SDK
-### * DA AGGIUNGERE: Software tipo Speccy
